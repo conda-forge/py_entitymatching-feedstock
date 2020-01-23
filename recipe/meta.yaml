@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/p/py_entitymatching/py_entitymatching-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Try-import-sklearn.impute.SimpleImputer-for-sklearn-0.22-compat.patch
 
 build:
   number: 0

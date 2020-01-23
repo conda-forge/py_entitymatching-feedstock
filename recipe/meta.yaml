@@ -1,14 +1,12 @@
-{% set name = "py_entitymatching" %}
 {% set version = "0.3.2" %}
 {% set sha256 = "f8e7a677901c4e35564d374b305e2beac13d615d49260787565877c0b07da1bb" %}
 
 package:
-  name: {{ name|lower }}
+  name: py_entitymatching
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/py_entitymatching/py_entitymatching-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -61,8 +59,8 @@ about:
   home: https://sites.google.com/site/anhaidgroup/projects/magellan/py_entitymatching
   license: BSD-3-Clause
   license_family: BSD
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'Python library for entity matching.'
+  license_file: LICENSE
+  summary: Python library for entity matching.
   description: |
     This project seeks to build a Python software package to match entities
     between two tables using supervised learning. 

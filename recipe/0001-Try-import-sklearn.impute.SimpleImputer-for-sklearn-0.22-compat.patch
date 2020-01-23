@@ -1,0 +1,14 @@
+--- py_entitymatching/matcher/matcherutils.py
++++ py_entitymatching/matcher/matcherutils.py
+@@ -8,7 +8,10 @@
+ 
+ import pandas as pd
+ import sklearn.model_selection as ms
+-from  sklearn.preprocessing import Imputer
++try:
++    from sklearn.impute import SimpleImputer as Imputer
++except ImportError:
++    from sklearn.preprocessing import Imputer
+ 
+ import py_entitymatching.catalog.catalog_manager as cm
+ import py_entitymatching.utils.catalog_helper as ch

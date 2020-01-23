@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - msinttypes  # [vc9]
   host:
     - python
@@ -26,15 +27,15 @@ requirements:
     - setuptools
     - cython
     - six
-    - py_stringsimjoin
+    - py_stringsimjoin >=0.3.0
     - cloudpickle
-    - pyparsing
-    - scikit-learn
-    - pandas-profiling
+    - pyparsing >=2.1.4
+    - scikit-learn >=0.18
     - xgboost  # [not win]
     - pyqt
     - requests
-    - ipython
+    - ipython  # ==5.6
+    - numpy  # ==1.16.2
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -42,15 +43,15 @@ requirements:
     - pandas
     - joblib
     - pyprind
-    - py_stringsimjoin
-    - cloudpickle
-    - pyparsing
-    - scikit-learn
-    - pandas-profiling
+    - py_stringsimjoin >=0.3.0
+    - cloudpickle >=0.2.1
+    - pyparsing >=2.1.4
+    - scikit-learn >=0.18
     - xgboost  # [not win]
     - pyqt
     - requests
-    - ipython
+    - ipython  # ==5.6
+    - matplotlib-base >=2.2.4
 
 test:
   imports:

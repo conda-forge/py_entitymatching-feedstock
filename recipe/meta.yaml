@@ -1,5 +1,5 @@
-{% set version = "0.3.2" %}
-{% set sha256 = "f8e7a677901c4e35564d374b305e2beac13d615d49260787565877c0b07da1bb" %}
+{% set version = "0.3.3" %}
+{% set sha256 = "ba632e6086ce4cfc3b9f89c59f577ac244fd73267597d437f2b938321fb2cfc0" %}
 
 package:
   name: py_entitymatching
@@ -11,8 +11,8 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
-  skip: True  # [not x86_64]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [not x86_64]
 
 requirements:
   build:

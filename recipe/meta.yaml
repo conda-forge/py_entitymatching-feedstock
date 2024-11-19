@@ -1,22 +1,23 @@
-{% set version = "0.3.2" %}
-{% set sha256 = "f8e7a677901c4e35564d374b305e2beac13d615d49260787565877c0b07da1bb" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "3656a8ab0bdce297ed3ae13c890c0091deeae79367aad44e3f84effd44b60f7f" %}
 
 package:
   name: py_entitymatching
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/py_entitymatching/py_entitymatching-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/py_entitymatching/py-entitymatching-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
-  skip: True  # [not x86_64]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [not x86_64]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - msinttypes  # [vc9]
   host:
